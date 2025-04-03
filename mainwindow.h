@@ -24,14 +24,18 @@ private slots:
     void on_ledOnBtn_clicked();
     void on_setupPwmBtn_clicked();
 
+    void on_periodSpinBox_editingFinished();
+
+    void on_widthSpinBox_editingFinished();
+
 private:
     Ui::MainWindow *ui;
-    void sendUartMessage(const char *data, size_t size);
-    qint64 bytesToWrite = 0;
     QList<QSerialPort*> ports;
     QList<QSerialPortInfo> availablePortsInfo;
     QSerialPort *activePort;
     QTimer timeOutTimer;
+    int bytesToWrite = 0;
+    void sendUartMessage(const char *data, size_t size);
     void setupSerial(QSerialPort &port, const QSerialPortInfo &portInfo);
     void updateSerialPorts();
     void waitForDevice();

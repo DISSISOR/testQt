@@ -74,7 +74,7 @@ void MainWindow::waitForDevice() {
         auto port = new QSerialPort(this);
         setupSerial(*port, portInfo);
         if (port->open(QIODevice::ReadWrite)) {
-            ports.append(port);
+            ports.push_back(port);
             connect(port, &QSerialPort::readyRead, this, [this, port]() {
                 const auto data = port->readAll();
                 const UartMessageHeader expect = {
@@ -128,4 +128,14 @@ void MainWindow::on_timeOutWaitingForDevice() {
 }
 
 
+void MainWindow::on_periodSpinBox_editingFinished()
+{
+    on_setupPwmBtn_clicked();
+}
+
+
+void MainWindow::on_widthSpinBox_editingFinished()
+{
+    on_setupPwmBtn_clicked();
+}
 

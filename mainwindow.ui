@@ -16,11 +16,11 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QPushButton" name="setupPwmBtn">
+       <widget class="QPushButton" name="ledOffBtn">
         <property name="text">
-         <string>Настройка шим</string>
+         <string>Выкл светодиод</string>
         </property>
        </widget>
       </item>
@@ -35,9 +35,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="ledOffBtn">
+       <widget class="QPushButton" name="setupPwmBtn">
         <property name="text">
-         <string>Выкл светодиод</string>
+         <string>Настройка шим</string>
         </property>
        </widget>
       </item>
